@@ -1,5 +1,3 @@
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/SomeWordss/Islands/main/Block"))()
-
 local Player = game.Players.LocalPlayer
 local Mouse = Player:GetMouse()
 
@@ -31,14 +29,15 @@ local Part1 = nil
 
 Mouse.Button1Down:Connect(function()
 	local Part = Mouse.Target
-	if not Part0 then
-		Part0 = Part
-	elseif Part0 and not Part1 then
-		Part1 = Part
-		Block_Place(Part1.Position+Vector3.new(10),Type)
-	end
 	if Part.Name == "stone" then
-		
+		if not Part0 then
+			Part0 = Part
+			print(Part0.Position)
+		elseif Part0 and not Part1 then
+			Part1 = Part
+			print(Part1.Position)
+			Block_Place(Part1.Position+Vector3.new(0,10,0),Type)
+		end
 	end
 end)
 
