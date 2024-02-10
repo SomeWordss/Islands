@@ -1,3 +1,5 @@
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/SomeWordss/Islands/main/Block.lua"))()
+
 local Player = game.Players.LocalPlayer
 local Mouse = Player:GetMouse()
 
@@ -30,7 +32,13 @@ local Part1 = false
 Mouse.Button1Down:Connect(function()
 	local Part = Mouse.Target
 	if Part.Name == "stone" then
-		print(Part.Name)
+		if not Part0 then
+			Part0 = Part
+			print("Part0",Part0)
+		elseif not Part1 then
+			Part1 = Part
+			print("Part1",Part1)
+		end
 	end
 end)
 
