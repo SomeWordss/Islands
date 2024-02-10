@@ -33,7 +33,7 @@ local Part1 = false
 
 Mouse.Button1Down:Connect(function()
 	local Part = Mouse.Target
-	if Part:IsA("MeshPart") and Part.Name == "stone" then
+	if Part.Name == "stone" then
 		if not Part0 then
 			Part0 = Part
 		elseif not Part1 then
