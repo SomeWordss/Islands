@@ -38,7 +38,7 @@ Mouse.Button1Down:Connect(function()
 			Part0 = Part
 		elseif not Part1 then
 			Part1 = Part
-			Block_Place(Part1.Position+Vector3.new(0,2,0))
+			Block_Place(Part1.Position+Vector3.new(0,3,0))
 		end
 	end
 end)
