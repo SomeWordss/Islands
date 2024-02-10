@@ -38,8 +38,10 @@ Mouse.Button1Down:Connect(function()
 			Part0 = Part
 		elseif not Part1 then
 			Part1 = Part
-			for x = 0,(Part0.Position.X-Part1.Position.X)/3 do
+			for x = 0,Part0.Position.X-Part1.Position.X do
 				Block_Place(Part1.Position+Vector3.new(Part0.Position.X+x*3,0,0))
+				print(x)
+				wait()
 			end
 		end
 	end
