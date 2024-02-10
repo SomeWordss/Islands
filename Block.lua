@@ -1,5 +1,3 @@
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/SomeWordss/Islands/main/Block.lua"))()
-
 local Player = game.Players.LocalPlayer
 local Mouse = Player:GetMouse()
 
@@ -38,7 +36,9 @@ Mouse.Button1Down:Connect(function()
 			Part0 = Part
 		elseif not Part1 then
 			Part1 = Part
-			Block_Place(Part1.Position+Vector3.new(0,3,0))
+			for x = 0,Part0.Position.X-Part1.Position.X do
+				Block_Place(Part1.Position+Vector3.new(Part0.Position.X+x*3,0,0))
+			end
 		end
 	end
 end)
