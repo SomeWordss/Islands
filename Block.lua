@@ -24,20 +24,13 @@ local function Block_Place(Position,Type)
 	game:GetService("ReplicatedStorage"):WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged"):WaitForChild("CLIENT_BLOCK_PLACE_REQUEST"):InvokeServer(unpack(args))
 end
 
-local Part0 = nil
-local Part1 = nil
+local Part0 = false
+local Part1 = false
 
 Mouse.Button1Down:Connect(function()
 	local Part = Mouse.Target
 	if Part.Name == "stone" then
-		if not Part0 then
-			Part0 = Part
-			print(Part0.Position)
-		elseif Part0 and not Part1 then
-			Part1 = Part
-			print(Part1.Position)
-			Block_Place(Part1.Position+Vector3.new(0,10,0),Type)
-		end
+		print(Part.Name)
 	end
 end)
 
